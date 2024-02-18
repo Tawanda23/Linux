@@ -1,54 +1,78 @@
 # Linux
 
-This is a repo for all the linux commands i have learnt to date and the ones that i use on a daily basis.
+This is a walk through of how to install Virtualbox, create a virtual machine and everyday Linux commands.
 
-The Repository will also show how to set up a vagrant virtual machine and how to navigate it.
+## Virtualbox Install & Vagrant Set-up
 
-- sudo apt-get update -y : comamand will auto-updte all the updates 
+Virtualbox is required to be able to ins
 
-- sudo su - chamges to root user
+Vagrant is designed to run on the local machine to create a Viryual MAchine inside.
+
+To install, follow these steps:
+
+Ensure there is enough memory on the local machine that the virtual machine will be created on.
+
+1. Go to [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
+    - The latest version of virtualbox will need to be installed
+
+2. Follow installation instructions
+
+Before creating a virtual machine, Vagrant needs to be installed and configured.
+
+To set up Vagrant, follow these steps:
+
+1. Create a folder where you want to store the virtual machine files.
+2. Navigate to the newly created folder in your terminal.
+3. Search for the desired box on the Vagrant website, e.g., `ubuntu/jammy64`.
+4. Initialize the Vagrant configuration file by running: `vagrant init ubuntu/jammy64`
+![present working directory](/images/vagrant-init.png)
+
+5. `vagrant init ubuntu/jammy64` - this will create the vagrant file that will be used to configure an Ubuntu machine
+
+6. `vagrant up` - This will start the virtual machine
+
+7. `vagrant-ssh` - SSH in to the machine
+
+`sudo apt-get update -y` - thsi comamand will auto-updte all the updates required when the virtual machine is started
+
+`sudo su` - changes to root user
 
 ## Naviagating Command Line
 
-- pwd - shows the current working directory
-    ![present working directory](/images/pwd.png)
+`pwd` - shows the current working directory
+![present working directory](/images/pwd.png)
 
-- ls - prints out the contents of that current working directory
+`ls` - Lists the contents of the current directory
 
-- cd - changes directory
+`cd` - changes directory
 
-- whoami - command will show which user is currently logged in
+`whoami` - command will show which user is currently logged in
 
-- clear - clears the terminal
+`clear` - clears the terminal
 
 
-##  Creating Files
+##  Creating Files and Directories
 
-- mkdir - this command creates a folder in the designated working directory. This is command expects a follow up command
+ `mkdir` - this command creates a folder in the designated working directory. This is command expects a follow up command
 
-    ![present working directory](/images/mkdir.png)
+![present working directory](/images/mkdir.png)
 
-- touch - this command will create a file in the folder selected
-    ![present working directory](/images/touch.png)
+`touch` - this command will create a file in the folder selected
+    ![present working directory][def]
 
-- cat - looks at the contents of the file 
+ `cat` - looks at the contents of the file 
 ![present working directory](/images/cat.png)
 
-To save any file that has been created, user can use the commands:
- - control + x
- - y + enter
+To save changes made in a file, press `Ctrl + X`, then `Y`, and finally `Enter`.
 
-To delete files and folders, the following commands can be used:
+To delete files and directories:
 
-- rm filenmame -  deletes file
-- rmdir foldername* - this deletes all empty folder within a directory
+- `rm <file_name>`: Deletes a file.
+- `rmdir <directory_name>`: Deletes an empty directory.
 
-File and folders can be moved around directories using the following commamnds:
+Files and directories can be moved around directories using the 'mv' command:
 
-- mv filename directory
-- mv filername directory
+`mv <filename> <directory destinantion>`
+![present working directory](/images/mv.png)
 
-    ![present working directory](/images/mv.png)
-
-
-
+To install further packages in Linux, user needs to be Root User to have the necessary permission.
